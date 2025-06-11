@@ -18,6 +18,7 @@ export const useExecutionStore = create((set, get) => ({
                 expected_outputs,
                 problemId
             }));
+            console.log("SOURCE CODE --->", source_code);
             const res = await axiosInstance.post("/execute-code" , { source_code, language_id, stdin, expected_outputs, problemId });
 
             set({submission:res.data.submission});

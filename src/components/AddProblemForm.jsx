@@ -56,14 +56,14 @@ const problemSchema = z.object({
     PYTHON: z.string().min(1, "Python code snippet is required"),
     JAVA: z.string().min(1, "Java solution is required"),
   }),
-  referenceSolutions: z.object({
+  referenceSolution: z.object({
     JAVASCRIPT: z.string().min(1, "JavaScript solution is required"),
     PYTHON: z.string().min(1, "Python solution is required"),
     JAVA: z.string().min(1, "Java solution is required"),
   }),
 });
 
-// Sample problem data for pre-filling the form
+
 // Sample problem data for pre-filling the form
 const sampledpData = {
   title: "Climbing Stairs",
@@ -174,7 +174,7 @@ class Main {
   }
 }`,
   },
-  referenceSolutions: {
+  referenceSolution: {
     JAVASCRIPT: `/**
 * @param {number} n
 * @return {number}
@@ -419,7 +419,7 @@ public class Main {
 }
 `,
   },
-  referenceSolutions: {
+  referenceSolution: {
     JAVASCRIPT: `/**
    * @param {string} s
    * @return {boolean}
@@ -536,7 +536,7 @@ const navigation = useNavigate();
         PYTHON: "def solution():\n    # Write your code here\n    pass",
         JAVA: "public class Solution {\n    public static void main(String[] args) {\n        // Write your code here\n    }\n}",
       },
-      referenceSolutions: {
+      referenceSolution: {
         JAVASCRIPT: "// Add your reference solution here",
         PYTHON: "# Add your reference solution here",
         JAVA: "// Add your reference solution here",
@@ -895,7 +895,7 @@ const navigation = useNavigate();
                         </h4>
                         <div className="border rounded-md overflow-hidden">
                           <Controller
-                            name={`referenceSolutions.${language}`}
+                            name={`referenceSolution.${language}`}
                             control={control}
                             render={({ field }) => (
                               <Editor
@@ -916,10 +916,10 @@ const navigation = useNavigate();
                             )}
                           />
                         </div>
-                        {errors.referenceSolutions?.[language] && (
+                        {errors.referenceSolution?.[language] && (
                           <div className="mt-2">
                             <span className="text-error text-sm">
-                              {errors.referenceSolutions[language].message}
+                              {errors.referenceSolution[language].message}
                             </span>
                           </div>
                         )}
